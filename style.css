@@ -1,9 +1,392 @@
+/* ==========================================================
+   VARIÁVEIS DE COR E FONTE
+   Troque os valores aqui para mudar as cores do site inteiro
+   ========================================================== */
+:root {
+  --cor-primaria: #6a1b2c;      /* vinho/bordô usado nos botões e destaques */
+  --cor-primaria-escura: #521521;
+  --cor-escura: #34363c;        /* botão "Download CV" e textos escuros */
+  --cor-texto: #4a4d55;         /* texto padrão */
+  --cor-texto-claro: #7c7f87;   /* texto secundário */
+  --cor-fundo: #ffffff;
+  --cor-fundo-alt: #f7f6f5;     /* fundo alternado das seções */
+  --fonte-principal: 'Poppins', Arial, Helvetica, sans-serif;
+  --raio-borda: 30px;           /* deixa os botões arredondados (pílula) */
+  --transicao: all 0.25s ease;
+}
+
+/* ==========================================================
+   RESET BÁSICO
+   ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar nos links do menu */
+}
+
 body {
-    margin: 0;
-    min-height: 100vh;
-    background-color: #474747;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Contêiner central com largura máxima, usado em todas as seções */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================
+   CABEÇALHO / MENU
+   ========================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--cor-fundo);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.logo img {
+  height: 34px;
+}
+
+/* Lista de links do menu */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 32px;
+}
+
+.nav__list a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-texto);
+  padding: 6px 2px;
+}
+
+.nav__list a.active {
+  color: var(--cor-primaria);
+}
+
+/* Botão de abrir o menu no celular (escondido no desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle img {
+  width: 26px;
+}
+
+/* ==========================================================
+   BOTÕES (estilo "pílula" usado em todo o site)
+   ========================================================== */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: var(--raio-borda);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn--primary {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+.btn--dark {
+  background-color: var(--cor-escura);
+  color: #fff;
+}
+
+.btn--dark:hover {
+  background-color: #202226;
+}
+
+/* Botão "Fale Comigo" do cabeçalho: menor e SEM efeito de escala,
+   conforme pedido (fica sempre no tamanho normal) */
+.btn--nav {
+  padding: 12px 26px;
+}
+
+/* ==========================================================
+   EFEITO DE HOVER COM SCALE (aplicado via JavaScript)
+   O script.js adiciona/remove esta classe nos elementos com
+   a classe "nav-hover" (menos o botão Fale Comigo)
+   ========================================================== */
+.hover-scale {
+  transition: var(--transicao);
+}
+
+.hover-scale:hover {
+  transform: scale(1.08);
+}
+
+/* ==========================================================
+   SEÇÃO HERO (topo do site)
+   ========================================================== */
+.hero {
+  overflow: hidden;
+  background-color: var(--cor-fundo);
+}
+
+.hero__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: calc(100vh - 90px);
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.hero__text {
+  flex: 1;
+  max-width: 480px;
+}
+
+.hero__greeting {
+  font-size: 18px;
+  color: var(--cor-texto-claro);
+  margin-bottom: 6px;
+}
+
+.hero__name {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--cor-escura);
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.hero__role {
+  font-size: 18px;
+  color: var(--cor-texto-claro);
+  margin-bottom: 30px;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 34px;
+}
+
+/* Ícones de redes sociais em formato de círculo */
+.hero__social {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--cor-primaria);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon img {
+  width: 16px;
+  height: 16px;
+  color: var(--cor-primaria);
+}
+
+/* Foto do lado direito do hero */
+.hero__photo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+  max-width: 560px;
+}
+
+.hero__photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ==========================================================
+   SEÇÕES GENÉRICAS (Sobre, Serviços, Portfolio, etc.)
+   Edite o conteúdo direto no index.html; aqui é só o estilo
+   ========================================================== */
+.section {
+  padding: 90px 0;
+}
+
+.section--alt {
+  background-color: var(--cor-fundo-alt);
+}
+
+.section__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cor-escura);
+  margin-bottom: 16px;
+}
+
+.section__text {
+  max-width: 640px;
+  color: var(--cor-texto-claro);
+}
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
+.footer {
+  background-color: var(--cor-escura);
+  color: #cfd0d3;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 13px;
+}
+
+/* ==========================================================
+   RESPONSIVO — TABLET (até 992px)
+   ========================================================== */
+@media (max-width: 992px) {
+  .hero__name {
+    font-size: 42px;
+  }
+
+  .hero__photo {
+    max-width: 440px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVO — CELULAR (até 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+
+  /* Mostra o botão de menu hambúrguer */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Menu vira um painel que abre/fecha por baixo do cabeçalho */
+  .nav {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+
+    /* Escondido por padrão; o JS adiciona a classe "nav--aberto" */
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transicao);
+  }
+
+  .nav.nav--aberto {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Hero empilhado: texto em cima, foto embaixo */
+  .hero__container {
+    flex-direction: column-reverse;
+    text-align: left;
+    padding-top: 20px;
+    min-height: auto;
+  }
+
+  .hero__text {
+    max-width: 100%;
+    padding: 30px 0;
+  }
+
+  .hero__photo {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .hero__photo img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero__name {
+    font-size: 34px;
+  }
+
+  .hero__buttons {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVO — CELULAR PEQUENO (até 420px)
+   ========================================================== */
+@media (max-width: 420px) {
+  .hero__name {
+    font-size: 28px;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 12px;
+  }
 }
