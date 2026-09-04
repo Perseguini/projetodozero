@@ -260,6 +260,88 @@ ul {
 }
 
 /* ==========================================================
+   PÁGINAS INTERNAS (Sobre, Projetos, Contato)
+   Mesmo padrão visual do hero: título grande + texto,
+   ocupando a altura da tela (sem rolagem no desktop).
+   ========================================================== */
+.page {
+  height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.page__eyebrow {
+  font-size: 18px;
+  color: var(--cor-texto-claro);
+  margin-bottom: 6px;
+}
+
+.page__title {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--cor-escura);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.page__text {
+  max-width: 620px;
+  color: var(--cor-texto-claro);
+  margin-bottom: 30px;
+}
+
+/* Lista simples usada na página de Projetos */
+.page__list {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.page__list li {
+  padding: 16px 20px;
+  border: 1.5px solid #e6e4e2;
+  border-radius: 12px;
+  color: var(--cor-texto);
+}
+
+.page__list strong {
+  color: var(--cor-escura);
+}
+
+/* Formulário simples usado na página de Contato */
+.page__form {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.page__form input,
+.page__form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid #e6e4e2;
+  border-radius: 12px;
+  font-family: var(--fonte-principal);
+  font-size: 14px;
+  color: var(--cor-texto);
+  resize: none;
+}
+
+.page__form input:focus,
+.page__form textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+.page__form button {
+  align-self: flex-start;
+}
+
+/* ==========================================================
    RESPONSIVO — TABLET (até 992px)
    ========================================================== */
 @media (max-width: 992px) {
@@ -351,6 +433,17 @@ ul {
 
   .hero__buttons {
     flex-wrap: wrap;
+  }
+
+  /* Páginas internas (Sobre, Projetos, Contato) empilhadas,
+     sem altura travada — no celular pode rolar normalmente */
+  .page {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .page__title {
+    font-size: 30px;
   }
 }
 

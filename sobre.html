@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Deixa o site responsivo em qualquer tamanho de tela -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre | Dimitri Teixeira</title>
+
+  <!-- Arquivo de estilos (o mesmo do index.html) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonte usada no site (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================= -->
+  <!-- CABEÇALHO / MENU DE NAVEGAÇÃO (igual em todas as páginas) -->
+  <!-- ============================= -->
+  <header class="header">
+    <div class="container header__container">
+
+      <!-- LOGO: troque o icons/logo.svg pela sua marca quando quiser -->
+      <a href="index.html" class="logo">
+        <img src="icons/logo.svg" alt="Logo Dimitri Teixeira">
+      </a>
+
+      <!-- Botão hambúrguer (só aparece no celular) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <img src="icons/menu.svg" alt="Abrir menu">
+      </button>
+
+      <!-- Menu de navegação. A classe "nav-hover" é usada pelo JS
+           para aplicar o efeito de escala no hover (menos o botão Fale Comigo).
+           Os links abrem em páginas próprias, na MESMA aba. -->
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav-hover">Home</a></li>
+          <!-- "active" marca em qual página o visitante está -->
+          <li><a href="sobre.html" class="nav-hover active">Sobre</a></li>
+          <li><a href="projetos.html" class="nav-hover">Projetos</a></li>
+          <li><a href="contato.html" class="nav-hover">Contato</a></li>
+        </ul>
+
+        <!-- Botão "Fale Comigo" do menu: fica sem efeito de escala -->
+        <a href="contato.html" class="btn btn--primary btn--nav">Fale Comigo</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================= -->
+  <!-- CONTEÚDO DA PÁGINA SOBRE (edite aqui) -->
+  <!-- ============================= -->
+  <section class="page" id="sobre">
+    <div class="container">
+      <p class="page__eyebrow">Sobre mim</p>
+      <h1 class="page__title">Um pouco da minha história</h1>
+      <p class="page__text">
+        Escreva aqui um texto contando quem você é, sua experiência
+        como programador e designer, e o que te motiva no trabalho.
+        Pode falar também da sua formação e dos seus principais
+        diferenciais.
+      </p>
+    </div>
+  </section>
+
+  <!-- Arquivo de scripts (menu mobile + efeito hover dos botões) -->
+  <script src="script.js"></script>
+</body>
+</html>
