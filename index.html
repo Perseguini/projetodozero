@@ -22,7 +22,7 @@
     <div class="container header__container">
 
       <!-- LOGO: troque o icons/logo.svg pela sua marca quando quiser -->
-      <a href="#home" class="logo">
+      <a href="index.html" class="logo">
         <img src="icons/logo.svg" alt="Logo Dimitri Teixeira">
       </a>
 
@@ -32,19 +32,22 @@
       </button>
 
       <!-- Menu de navegação. A classe "nav-hover" é usada pelo JS
-           para aplicar o efeito de escala no hover (menos o botão Fale Comigo) -->
+           para aplicar o efeito de escala no hover (menos o botão Fale Comigo).
+           Os links abaixo abrem em páginas próprias, na MESMA aba
+           (sem target="_blank"). Troque "index.html", "sobre.html" etc.
+           pelo nome real do arquivo/página de cada seção. -->
       <nav class="nav" id="nav">
         <ul class="nav__list">
-          <li><a href="#home" class="nav-hover active">Home</a></li>
-          <li><a href="#sobre" class="nav-hover">Sobre</a></li>
-          <li><a href="#servicos" class="nav-hover">Serviços</a></li>
-          <li><a href="#portfolio" class="nav-hover">Portfolio</a></li>
-          <li><a href="#depoimentos" class="nav-hover">Depoimentos</a></li>
-          <li><a href="#contato" class="nav-hover">Contato</a></li>
+          <li><a href="index.html" class="nav-hover active">Home</a></li>
+          <li><a href="sobre.html" class="nav-hover">Sobre</a></li>
+          <li><a href="servicos.html" class="nav-hover">Serviços</a></li>
+          <li><a href="portfolio.html" class="nav-hover">Portfolio</a></li>
+          <li><a href="depoimentos.html" class="nav-hover">Depoimentos</a></li>
+          <li><a href="contato.html" class="nav-hover">Contato</a></li>
         </ul>
 
         <!-- Botão "Fale Comigo" do menu: fica sem efeito de escala -->
-        <a href="#contato" class="btn btn--primary btn--nav">Fale Comigo</a>
+        <a href="contato.html" class="btn btn--primary btn--nav">Fale Comigo</a>
       </nav>
 
     </div>
@@ -62,10 +65,12 @@
         <h1 class="hero__name">Dimitri Teixeira</h1>
         <p class="hero__role">Programador &amp; Designer</p>
 
-        <!-- Botões de ação: recebem o efeito hover + scale via JS -->
+        <!-- Botões de ação: recebem o efeito hover + scale via JS.
+             "Fale Comigo!" abre a página de contato na mesma aba.
+             "Download CV" abre/baixa o arquivo do currículo (troque o href pelo seu PDF). -->
         <div class="hero__buttons">
-          <a href="#contato" class="btn btn--primary nav-hover">Fale Comigo!</a>
-          <a href="#" class="btn btn--dark nav-hover" download>Download CV</a>
+          <a href="contato.html" class="btn btn--primary nav-hover">Fale Comigo!</a>
+          <a href="curriculo.pdf" class="btn btn--dark nav-hover" download>Download CV</a>
         </div>
 
         <!-- Ícones de redes sociais: troque os links "href" pelos seus -->
@@ -92,65 +97,6 @@
 
     </div>
   </section>
-
-  <!-- ============================= -->
-  <!-- SEÇÃO SOBRE (edite o conteúdo aqui) -->
-  <!-- ============================= -->
-  <section class="section" id="sobre">
-    <div class="container">
-      <h2 class="section__title">Sobre</h2>
-      <p class="section__text">Escreva aqui um pouco sobre você, sua experiência e sua trajetória.</p>
-    </div>
-  </section>
-
-  <!-- ============================= -->
-  <!-- SEÇÃO SERVIÇOS (edite o conteúdo aqui) -->
-  <!-- ============================= -->
-  <section class="section section--alt" id="servicos">
-    <div class="container">
-      <h2 class="section__title">Serviços</h2>
-      <p class="section__text">Liste aqui os serviços que você oferece.</p>
-    </div>
-  </section>
-
-  <!-- ============================= -->
-  <!-- SEÇÃO PORTFOLIO (edite o conteúdo aqui) -->
-  <!-- ============================= -->
-  <section class="section" id="portfolio">
-    <div class="container">
-      <h2 class="section__title">Portfolio</h2>
-      <p class="section__text">Mostre aqui seus trabalhos e projetos.</p>
-    </div>
-  </section>
-
-  <!-- ============================= -->
-  <!-- SEÇÃO DEPOIMENTOS (edite o conteúdo aqui) -->
-  <!-- ============================= -->
-  <section class="section section--alt" id="depoimentos">
-    <div class="container">
-      <h2 class="section__title">Depoimentos</h2>
-      <p class="section__text">Coloque aqui depoimentos de clientes.</p>
-    </div>
-  </section>
-
-  <!-- ============================= -->
-  <!-- SEÇÃO CONTATO (edite o conteúdo aqui) -->
-  <!-- ============================= -->
-  <section class="section" id="contato">
-    <div class="container">
-      <h2 class="section__title">Contato</h2>
-      <p class="section__text">Coloque aqui seu formulário ou informações de contato.</p>
-    </div>
-  </section>
-
-  <!-- ============================= -->
-  <!-- RODAPÉ -->
-  <!-- ============================= -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="ano"></span> Dimitri Teixeira. Todos os direitos reservados.</p>
-    </div>
-  </footer>
 
   <!-- Arquivo de scripts (menu mobile + efeito hover dos botões) -->
   <script src="script.js"></script>

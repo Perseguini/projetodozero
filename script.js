@@ -4,7 +4,6 @@
    2) Aplica o efeito de hover com scale() nos botões e ícones
       (usando JavaScript para adicionar a classe que tem o :hover
       no CSS). O botão "Fale Comigo" do cabeçalho é ignorado.
-   3) Atualiza o ano do rodapé automaticamente
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -35,11 +34,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // Adiciona a classe que ativa o :hover { transform: scale() } do CSS
     elemento.classList.add('hover-scale');
   });
-
-  /* ---------- 3) ANO DO RODAPÉ ---------- */
-  var spanAno = document.getElementById('ano');
-  if (spanAno) {
-    spanAno.textContent = new Date().getFullYear();
-  }
 
 });

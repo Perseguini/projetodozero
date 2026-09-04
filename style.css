@@ -24,10 +24,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth; /* rolagem suave ao clicar nos links do menu */
-}
-
 body {
   font-family: var(--fonte-principal);
   color: var(--cor-texto);
@@ -254,41 +250,6 @@ ul {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-/* ==========================================================
-   SEÇÕES GENÉRICAS (Sobre, Serviços, Portfolio, etc.)
-   Edite o conteúdo direto no index.html; aqui é só o estilo
-   ========================================================== */
-.section {
-  padding: 90px 0;
-}
-
-.section--alt {
-  background-color: var(--cor-fundo-alt);
-}
-
-.section__title {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--cor-escura);
-  margin-bottom: 16px;
-}
-
-.section__text {
-  max-width: 640px;
-  color: var(--cor-texto-claro);
-}
-
-/* ==========================================================
-   RODAPÉ
-   ========================================================== */
-.footer {
-  background-color: var(--cor-escura);
-  color: #cfd0d3;
-  text-align: center;
-  padding: 24px 0;
-  font-size: 13px;
 }
 
 /* ==========================================================
