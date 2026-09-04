@@ -167,8 +167,11 @@ ul {
 
 /* ==========================================================
    SEÇÃO HERO (topo do site)
+   Altura travada na altura da tela (menos o cabeçalho) para
+   a página não ter rolagem, como pedido.
    ========================================================== */
 .hero {
+  height: calc(100vh - 90px);
   overflow: hidden;
   background-color: var(--cor-fundo);
 }
@@ -178,8 +181,8 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  min-height: calc(100vh - 90px);
-  padding-top: 40px;
+  height: 100%;
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -236,20 +239,24 @@ ul {
   color: var(--cor-primaria);
 }
 
-/* Foto do lado direito do hero */
+/* Foto do lado direito do hero: ocupa a altura toda do hero,
+   sem ultrapassar a tela (evita o site ficar com rolagem) */
 .hero__photo {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  align-self: flex-end;
+  align-self: stretch;
   max-width: 560px;
+  height: 100%;
 }
 
 .hero__photo img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
   object-fit: cover;
+  object-position: bottom;
 }
 
 /* ==========================================================
@@ -306,12 +313,18 @@ ul {
     gap: 16px;
   }
 
-  /* Hero empilhado: texto em cima, foto embaixo */
+  /* Hero empilhado: texto em cima, foto embaixo.
+     No celular o hero volta a ter altura livre (auto), já que
+     empilhado o conteúdo não cabe todo em uma tela só. */
+  .hero {
+    height: auto;
+  }
+
   .hero__container {
     flex-direction: column-reverse;
     text-align: left;
     padding-top: 20px;
-    min-height: auto;
+    height: auto;
   }
 
   .hero__text {
@@ -321,10 +334,13 @@ ul {
 
   .hero__photo {
     max-width: 100%;
+    height: auto;
     justify-content: center;
   }
 
   .hero__photo img {
+    width: auto;
+    height: auto;
     max-width: 320px;
     margin: 0 auto;
   }
